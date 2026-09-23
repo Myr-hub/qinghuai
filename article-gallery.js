@@ -7,7 +7,7 @@ if (viewer && typeof viewer.showModal === 'function') {
     link.addEventListener('click', event => {
       event.preventDefault();
       trigger = link;
-      preview.src = link.href;
+      preview.src = link.querySelector("img").currentSrc || link.href;
       preview.alt = link.querySelector('img').alt;
       caption.textContent = preview.alt;
       viewer.showModal();
